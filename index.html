@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            font-size: xx-large;
+            box-sizing: border-box;
+            overflow-x: hidden; /* Wyłączenie przewijania w poziomie */
+        }
+
+        * {
+            box-sizing: inherit;
+        }
+
+        /* header */
+        header {
+            background-color: black;
+            color: rgba(133, 128, 128, 0.781);
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 30px;
+        }
+
+        /* header napisy */
+        header a{
+            color: gray;
+            text-decoration: none;
+            padding: 0.5em;
+            font-size: 50px;
+        }
+        header a:hover {
+            color: white;
+        }
+
+        /* główne zdjęcie */
+        .container {
+            text-align: center;
+            background-color: #f4f4f4;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+            
+        }
+
+        /* Zegarek, torebka itp. */
+        .container2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+            grid-gap: 20px;
+            padding-top: 30px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .item1, .item2, .item3 {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .item1 img, .item2 img, .item3 img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .tekst1, .tekst2, .tekst3 {
+            position: absolute;
+            bottom: -15px;
+            left: 15px;
+            padding: 10px;
+            color: white;
+            width: 100%;
+        }
+        .tekst2{left:-10px}
+        .tekst1 a, .tekst2 a, .tekst3 a {
+            color: rgb(241, 241, 241);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 100px;
+            
+        }
+        .tekst1 p, .tekst2 p, .tekst3 p {
+            color: rgb(241, 241, 241);
+            font-size: 50px;
+        }
+        .tekst1 a:hover, .tekst2 a:hover, .tekst3 a:hover {
+            color: rgb(73, 73, 73);
+        }
+
+        /* główne produkty (garniak, spodnie, itp.) */
+        main {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(25em, 1fr));
+            grid-template-rows: repeat(2, minmax(25em, 1fr));
+            grid-gap: 1em;
+            margin-top: 50px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .garniak {
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .garniak img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .tekscior1 {
+            font-size: 40px;
+        }
+
+        .cena1 {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            font-size: 90px;
+        }
+
+        button {
+            margin: 0 auto;
+            margin-bottom: 100px;
+            font-size: x-large;
+            background-color: rgb(0, 0, 0);
+            padding: 20px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button a {
+            font-size: 40px;
+            color: white;
+            text-decoration: none;
+        }
+        button a:hover {
+            color: rgb(77, 75, 75);
+        }
+
+        /* mniejsze ekrany */
+        @media (max-width: 1400px) {
+            header {
+                grid-template-columns: repeat(6, 1fr);
+                font-size: 25px;
+            }
+            header a {
+                font-size: 10px;
+            }
+            
+
+            .tekst1, .tekst2, .tekst3 {
+            position: absolute;
+            bottom: -20px;
+            left: -10px;
+            padding: 10px;
+            color: white;
+            width: 100%;
+            font-size:10px
+        }
+        .tekst1 a, .tekst2 a, .tekst3 a {
+                font-size: 8px;left:300px;
+            }
+            .tekst1 p, .tekst2 p, .tekst3 p {
+                font-size: 8px;
+            }
+            .container {
+                width: 100%;
+            }
+
+            .container2 {
+                grid-template-columns: repeat(3, 1fr);
+                width: 100%;
+            }
+
+            main {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                width: 100%;
+            }
+
+            .garniak img {
+                width: 100%;
+            }
+
+            .tekscior1 {
+                font-size: 50%;
+            }
+
+            .cena1 {
+                font-size: 50%;
+            }
+
+            button a {
+                font-size: 50%;
+            }
+
+            button {
+                padding: 2px;
+            }
+
+            .tekst1, .tekst2, .tekst3 {
+                font-size: 20px;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#">Spodnie</a>
+        <a href="#">Czapki</a>
+        <a href="#">Koszulki</a>
+        <a href="#">Jeansy</a>
+        <a href="#">Topy</a>
+        <a href="#">🛒</a>
+    </header>
+
+    <div class="container">
+        <img src="garniturmezczyzna.jpg" alt="Logo">
+    </div>
+
+    <div class="container2">
+        <div class="item1">
+            <img src="zegarek.jpg">
+            <div class="tekst1">
+                <a href="#">Zegarek </a>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p> 
+            </div>
+        </div>
+
+        <div class="item2">
+            <img src="torebka2.jpg">
+            <div class="tekst2">
+               <a href="#">Torebka</a>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p> 
+            </div>
+        </div>
+
+        <div class="item3">
+            <img src="buty.jpg">
+            <div class="tekst3">
+                <a href="#">Buty</a>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p> 
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="garniak">
+            <img src="koszula.jpg">
+            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+            <div class="cena1"><b>10$</b></div>
+            <button><a href="#">Dodaj do koszyka</a></button>
+        </div>
+        
+        <div class="garniak">
+            <img src="spodnie.jpg">
+            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+            <div class="cena1"><b>16$</b></div>
+            <button><a href="#">Dodaj do koszyka</a></button>
+        </div>
+
+        <div class="garniak">
+            <img src="pasek.jpg">
+            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+            <div class="cena1"><b>10$</b></div>
+            <button><a href="#">Dodaj do koszyka</a></button>
+        </div>
+
+        <div class="garniak">
+            <img src="tshirt.jpg">
+            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+            <div class="cena1"><b>118$</b></div>
+            <button><a href="#">Dodaj do koszyka</a></button>
+        </div>
+
+        <div class="garniak">
+            <img src="bluzakaptur.jpg">
+            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+            <div class="cena1"><b>1058$</b></div>
+            <button><a href="#">Dodaj do koszyka</a></button>
+        </div>
+
+        <div class="garniak">
+            <img src="tshirt2.jpg">
+            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+            <div class="cena1"><b>58$</b></div>
+            <button><a href="#">Dodaj do koszyka</a></button>
+        </div>
+
+        <div class="garniak">
+            <img src="tshirt4.jpg">
+            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+            <div class="cena1"><b>40$</b></div>
+            <button><a href="#">Dodaj do koszyka</a></button>
+        </div>
+
+        <div class="garniak">
+            <img src="tshirt5.jpg">
+            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+            <div class="cena1"><b>20$</b></div>
+            <button><a href="#">Dodaj do koszyka</a></button>
+        </div>
+    </main>
+</body>
+</html>
