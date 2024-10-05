@@ -2,71 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Responsive Design</title>
     <style>
-       body {
+        body {
             margin: 0;
             padding: 0;
-            width: 100%;
             font-family: Arial, sans-serif;
-            font-size: xx-large;
             box-sizing: border-box;
-            overflow-x: hidden; /* Wyłączenie przewijania w poziomie */
         }
 
         * {
             box-sizing: inherit;
         }
 
-        /* header */
         header {
             background-color: black;
             color: rgba(133, 128, 128, 0.781);
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             align-items: center;
-            width: 100%;
-            box-sizing: border-box;
-            font-size: 30px;
+            padding: 10px;
         }
 
-        /* header napisy */
-        header a{
+        header a {
             color: gray;
             text-decoration: none;
             padding: 0.5em;
-            font-size: 50px;
+            text-align: center;
+            font-size: 1.5rem;
         }
+
         header a:hover {
             color: white;
         }
 
-        /* główne zdjęcie */
+        /* Główne zdjęcie */
         .container {
             text-align: center;
-            background-color: #f4f4f4;
             width: 100%;
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
         .container img {
             width: 100%;
             height: auto;
-            
         }
 
-        /* Zegarek, torebka itp. */
+        /* Produkty */
         .container2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
-            grid-gap: 20px;
-            padding-top: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .container2 img {
             width: 100%;
-            box-sizing: border-box;
-            margin: 0;
+            height: auto;
         }
 
         .item1, .item2, .item3 {
@@ -74,52 +65,39 @@
             overflow: hidden;
         }
 
-        .item1 img, .item2 img, .item3 img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            cursor: pointer;
-        }
-
         .tekst1, .tekst2, .tekst3 {
             position: absolute;
-            bottom: -15px;
+            bottom: 10px;
             left: 15px;
-            padding: 10px;
             color: white;
-            width: 100%;
-        }
-        .tekst2{left:-10px}
-        .tekst1 a, .tekst2 a, .tekst3 a {
-            color: rgb(241, 241, 241);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 100px;
-            
-        }
-        .tekst1 p, .tekst2 p, .tekst3 p {
-            color: rgb(0, 0, 0);
-            font-size: 50px;
-        }
-        .tekst1 a:hover, .tekst2 a:hover, .tekst3 a:hover {
-            color: rgb(73, 73, 73);
         }
 
-        /* główne produkty (garniak, spodnie, itp.) */
+        .tekst1 a, .tekst2 a, .tekst3 a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .tekst1 p, .tekst2 p, .tekst3 p {
+            color: #333;
+            font-size: 1rem;
+        }
+
+        /* Główne produkty */
         main {
             display: grid;
-            grid-template-columns: repeat(4, minmax(25em, 1fr));
-            grid-template-rows: repeat(2, minmax(25em, 1fr));
-            grid-gap: 1em;
-            margin: 50px 20px; /* Dodany margines po bokach */
-            width: 100%;
-            box-sizing: border-box;
-            padding: 0;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 20px;
+            padding: 20px;
         }
 
         .garniak {
             text-align: center;
             border-radius: 8px;
+            background-color: #f4f4f4;
+            padding: 10px;
         }
 
         .garniak img {
@@ -129,107 +107,101 @@
         }
 
         .tekscior1 {
-            font-size: 40px;
+            font-size: 1.5rem;
+            margin: 10px 0;
         }
 
         .cena1 {
-            color:red;
-            text-align: center;
-            font-size: 90px;
+            color: red;
+            font-size: 2rem;
         }
 
         button {
-            margin: 0 auto;
-            margin-bottom: 100px;
-            font-size: x-large;
-            background-color: rgb(0, 0, 0);
-            padding: 20px;
+            display: block;
+            margin: 10px auto;
+            background-color: black;
             color: white;
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
 
         button a {
-            font-size: 40px;
             color: white;
             text-decoration: none;
+            font-size: 1.2rem;
         }
+
         button a:hover {
-            color: rgb(77, 75, 75);
+            color: gray;
         }
-        del{font-size: 60px;color: gray;}
-        /* mniejsze ekrany */
-        @media (max-width: 2000px) {
-            header {
-                grid-template-columns: repeat(6, 1fr);
-                font-size: 25px;width: 130%;
-            }
-            header a {
-                font-size: 15px;
-            }
-            .container img{width: 100%;}
 
-            .tekst1, .tekst2, .tekst3 {
-                position: absolute;
-                bottom: -5px;
-                left: -10px;
-                padding: 10px;
-                color: white;
-                width: 100%;
-                font-size:10px
-            }
-            .tekst1 a, .tekst2 a, .tekst3 a {
-                font-size: 15px;left:300px;
-            }
-            .tekst1 p, .tekst2 p, .tekst3 p {
-                font-size: 5px;
-            }
-            .item1 img,.item2 img,.item3 img{width: 100%;}
-            .container {
-                width: 130%;
-            }
-            .item1,.item2,.item3{width:100%; grid-gap:4em}
+        del {
+            font-size: 1rem;
+            color: gray;
+        }
 
+        /* Media Queries */
+        @media (max-width: 1200px) {
             .container2 {
-                grid-template-columns: repeat(3, 2fr);
-                width: 130%;grid-gap:10px;box-sizing: border-box;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             main {
-                grid-template-columns: repeat(4, 1fr);
-                grid-template-rows: repeat(2, 1fr);
-                width: 100%;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(auto-fit, auto);
             }
 
-            .garniak img {
-                width: 100%;
+            .tekst1 a, .tekst2 a, .tekst3 a {
+                font-size: 1rem;
+            }
+
+            .tekst1 p, .tekst2 p, .tekst3 p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .container2 {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(auto-fit, auto);
             }
 
             .tekscior1 {
-                font-size: 55%;
+                font-size: 1.2rem;
             }
 
             .cena1 {
-                font-size: 55%;
+                font-size: 1.5rem;
             }
-            del{font-size:55%}
 
             button a {
-                font-size: 75%;
-            }
-
-            button {
-                padding: 2px;
-            }
-
-            .tekst1, .tekst2, .tekst3 {
-                font-size: 20px;
-                align-items: center;
-                text-align: center;
+                font-size: 1rem;
             }
         }
-        
+
+        @media (max-width: 600px) {
+            header {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tekscior1 {
+                font-size: 1rem;
+            }
+
+            .cena1 {
+                font-size: 1.2rem;
+            }
+
+            button a {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -250,8 +222,8 @@
         <div class="item1">
             <img src="zegarek.jpg">
             <div class="tekst1">
-                <a href="#">Zegarek </a>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p> 
+                <a href="#">Zegarek</a>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
             </div>
         </div>
 
@@ -259,7 +231,7 @@
             <img src="torebka2.jpg">
             <div class="tekst2">
                 <a href="#">Torebka</a>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p> 
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
             </div>
         </div>
 
@@ -267,7 +239,7 @@
             <img src="buty.jpg">
             <div class="tekst3">
                 <a href="#">Buty</a>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p> 
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
             </div>
         </div>
     </div>
@@ -275,57 +247,57 @@
     <main>
         <div class="garniak">
             <img src="koszula.jpg">
-            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+            <div class="tekscior1">Koszula męska elegancka</div>
             <div class="cena1"><b>10$</b></div>
             <button><a href="#">Dodaj do koszyka</a></button>
         </div>
-        
+
         <div class="garniak">
             <img src="spodnie.jpg">
-            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+            <div class="tekscior1">Spodnie jeansowe</div>
             <div class="cena1"><b>16$</b></div>
             <button><a href="#">Dodaj do koszyka</a></button>
         </div>
 
         <div class="garniak">
             <img src="pasek.jpg">
-            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+            <div class="tekscior1">Pasek skórzany</div>
             <div class="cena1"><b>10$</b></div>
             <button><a href="#">Dodaj do koszyka</a></button>
         </div>
 
         <div class="garniak">
             <img src="tshirt.jpg">
-            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
-            <div class="cena1"><b>118$</b></div>
+            <div class="tekscior1">T-shirt bawełniany</div>
+            <div class="cena1"><b>18$</b></div>
             <button><a href="#">Dodaj do koszyka</a></button>
         </div>
 
         <div class="garniak">
             <img src="bluzakaptur.jpg">
-            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
-            <div class="cena1"><b>1058$</b></div>
+            <div class="tekscior1">Bluza z kapturem</div>
+            <div class="cena1"><b>25$</b></div>
             <button><a href="#">Dodaj do koszyka</a></button>
         </div>
 
         <div class="garniak">
             <img src="tshirt2.jpg">
-            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
-            <div class="cena1"><b>58$ <del>80$</del></b></div>
-            <button><a href="#">Dodaj do koszyka</a></button>
-        </div>
-
-        <div class="garniak">
-            <img src="tshirt4.jpg">
-            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
-            <div class="cena1"><b>40$ <del>60$</del></b></div>
+            <div class="tekscior1">T-shirt sportowy</div>
+            <div class="cena1"><b>22$ <del>30$</del></b></div>
             <button><a href="#">Dodaj do koszyka</a></button>
         </div>
 
         <div class="garniak">
             <img src="tshirt5.jpg">
-            <div class="tekscior1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
-            <div class="cena1"><b>20$ <del>40$</del></b></div>
+            <div class="tekscior1">T-shirt z nadrukiem</div>
+            <div class="cena1"><b>15$ <del>20$</del></b></div>
+            <button><a href="#">Dodaj do koszyka</a></button>
+        </div>
+
+        <div class="garniak">
+            <img src="tshirt4.jpg">
+            <div class="tekscior1">T-shirt basic</div>
+            <div class="cena1"><b>12$ <del>18$</del></b></div>
             <button><a href="#">Dodaj do koszyka</a></button>
         </div>
     </main>
