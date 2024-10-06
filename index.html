@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Strona 1</title>
+    <title>Sklep</title>
     <style>
         body {
             margin: 0;
@@ -126,23 +126,25 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        button:hover{background-color: gray;}
 
         button a {
             color: white;
             text-decoration: none;
             font-size: 1.2rem;
+            cursor: pointer;
         }
 
         button a:hover {
-            color: gray;
+            color: rgb(253, 251, 251);
         }
 
         del {
             font-size: 1rem;
-            color: gray;
+            color:gray;
         }
 
-        /* Media Queries */
+      
         @media (max-width: 1200px) {
             .container2 {
                 grid-template-columns: repeat(2, 1fr);
@@ -201,6 +203,7 @@
             button a {
                 font-size: 0.9rem;
             }
+           
         }
     </style>
 </head>
@@ -269,7 +272,7 @@
         <div class="garniak">
             <img src="tshirt.jpg">
             <div class="tekscior1">T-shirt bawełniany</div>
-            <div class="cena1"><b>18$</b></div>
+            <div class="cena1"><b>18$ <del>25$</del></b></div>
             <button><a href="#">Dodaj do koszyka</a></button>
         </div>
 
